@@ -1,6 +1,3 @@
-#audit
-
-
 #Import tidyverse
 library(tidyverse)
 
@@ -43,4 +40,4 @@ q1_summary = q1_2025_data |>
 q1_summary
 
 #Save to output folder
-write_csv(q1_2025_data, file = "output/cleaned_data.csv")
+write_csv(q1_2025_data, file = "output/cleaned_q1_2025.csv")
