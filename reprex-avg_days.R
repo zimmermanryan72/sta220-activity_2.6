@@ -11,10 +11,11 @@ claims_small <- tribble(
   "X-004",               -1
 )
 
+
 # I expected an average of 34 days, with half of the claims late.
 # I get an average of 16.5 days and a share late of 0.25.
 claims_small |>
   summarize(
-    avg_days   = mean(days_to_close),
-    share_late = mean(days_to_close > 30)
+    avg_days = mean(na_if(days_to_close,-1), na.rm=TRUE),
+    share_late = mean(na_if(days_to_close,-1) > 30, na.rm=TRUE)
   )
